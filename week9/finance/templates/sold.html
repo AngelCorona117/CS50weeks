@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Sold
+{% endblock %}
+
+{% block main %}
+
+
+<header>Sold</header>
+<br>
+
+<table class="table">
+    <tr>
+        <td>Symbol </td>
+        <td>Name </td>
+        <td>Shares </td>
+        <td>Price </td>
+        <td>Total </td>
+    </tr>
+
+    <tr>
+        <td> {{ SymbolSold }} </td>
+        <td> {{ name }} </td>
+        <td> {{ sold }} </td>
+        <td> {{ price | usd }}</td>
+        <td> {{ total | usd}} </td>
+    </tr>
+    <tr>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>  Available Cash: </td>
+        <td> {{ NewMoney | usd}} </td>
+    </tr>
+    <tr>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> UpdatedMoney: </td>
+        <td>  {{ (total*NewMoney) | usd }}</td>
+    </tr>
+</table>
+
+{% endblock %}

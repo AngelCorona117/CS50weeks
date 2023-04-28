@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <title>Trivia!</title>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Trivia!</h1>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <h2>Part 1: Multiple Choice </h2>
+            <hr>
+            <!-- TODO: Add multiple choice question here -->
+            <h3>There are only two countries in the world where Coca Cola doesnt exist, whats the name of both contries?
+            </h3>
+
+            <button class="incorrect">North Corea and South Corea</button>
+            <button class="incorrect"> Egipt and North Corea</button>
+            <button class="correct"> North Corea and Cuba</button>
+            <button class="incorrect">Brazil and Thailand</button>
+            <button class="incorrect">Iraq and North Corea</button>
+
+            <p id="placeholder" class="answer"></p>
+        </div>
+
+        <div class="section">
+            <h2>Part 2: Free Response</h2>
+            <hr>
+            <!-- TODO: Add free response question here -->
+            <h3>Who stole Robbert the duck on Humphrey Street?</h3>
+            <input type="text" id="P2"></input>
+            <button id="box">Check Answer</button>
+            <p id="placeholder2" class="answer"></p>
+        </div>
+    </div>
+</body>
+<script>
+    // TODO: Add code to check answers to questions
+    //for correct answer in part 1
+    let PH1 = document.querySelector("#placeholder")
+    let correct = document.querySelector(".correct");
+    correct.addEventListener("click", function () {
+        correct.style.backgroundColor = "green";
+        PH1.innerText = "Correct!!!";
+        PH1.style.color = "green";
+    });
+    //for incorrect answers in part 1
+    let incorrect = document.querySelectorAll(".incorrect");
+    incorrect.forEach((e) => {
+        e.addEventListener("click", function () {
+            e.style.backgroundColor = "red";
+            PH1.innerText = "Incorrect!!!";
+            PH1.style.color = "red";
+        });
+
+    });
+
+    //for part 2 input
+    let PH2 = document.querySelector("#placeholder2")
+    let Box = document.querySelector("#box")
+    Box.addEventListener("click", function () {
+        let answer = document.querySelector("#P2");
+        if (answer.value == "Bruce") {
+            box.style.backgroundColor = "green";
+            PH2.innerText = "Correct!!!";
+            PH2.style.color = "green";
+
+        }
+        else {
+            box.style.backgroundColor = "red";
+            PH2.innerText = "Incorrect!!!";
+            PH2.style.color = "red"
+        }
+    })
+
+</script>
+
+</html>

@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block title %}
+register
+{% endblock %}
+
+{% block main %}
+    <header>Bought</header>
+
+
+<br>
+
+
+
+<table class="table">
+    <tr>
+        <td>Symbol </td>
+        <td>Name </td>
+        <td>Shares </td>
+        <td>Price </td>
+        <td>Total </td>
+    </tr>
+
+    <tr>
+        <td> {{ symbol }} </td>
+        <td> {{ name }} </td>
+        <td> {{ Shares }} </td>
+        <td> {{ price | usd }}</td>
+        <td> {{ TotalValue | usd}} </td>
+    </tr>
+    <tr>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>  Available Cash: </td>
+        <td> {{UpdatedMoney | usd}} </td>
+    </tr>
+    <tr>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> Total Money: </td>
+        <td> {{TotalMoney | usd}} </td>
+    </tr>
+</table>
+
+{% endblock %}
